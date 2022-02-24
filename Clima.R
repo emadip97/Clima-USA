@@ -1,6 +1,6 @@
 #carichiamo data
 
-setwd("C:\\Users\\emanu\\Desktop\\Ema\\Unisi\\Laurea Magistrale\\1° Anno 2° Semestre\\Inferenza Statistica\\Dati tesine")
+setwd("C:\\Users\\emanu\\Desktop\\Ema\\Unisi\\Laurea Magistrale\\1Â° Anno 2Â° Semestre\\Inferenza Statistica\\Dati tesine")
 library(readxl)
 Data<-read_excel("City-climate.xlsx")
 
@@ -31,20 +31,20 @@ setwd("C:\\Users\\emanu\\Desktop\\Emanuele\\Clima")
 
 png("box_jan.png")
 boxplot(JanTF, boxwex = 0.2, main = "Box-and-whiskers plot", 
-        ylab = "Temperatura media Gennaio (F°)")
+        ylab = "Temperatura media Gennaio (FÂ°)")
 rug(JanTF, side = 2)
 dev.off()
 summary(JanTF)
 
 
-#Dal boxplot vediamo la presenza di un valore anomalo (67), però tralasciando ciò possiamo già intravedere
+#Dal boxplot vediamo la presenza di un valore anomalo (67), perÃ² tralasciando ciÃ² possiamo giÃ  intravedere
 #la forma della distribuzione, che sembra avere una certa simmetria, forse con una leggera asimmetria 
-#positiva. Il valore mediano è 31 che non si discosta molto dalla media 33.8; inoltre il 50% delle 
-#osservazioni è compreso tra 27 e 39.5.
+#positiva. Il valore mediano Ã¨ 31 che non si discosta molto dalla media 33.8; inoltre il 50% delle 
+#osservazioni Ã¨ compreso tra 27 e 39.5.
 
 png("box_jul.png")
 boxplot(JulyTF, boxwex = 0.2, main = "Box-and-whiskers plot", 
-        ylab = "Temperatura media Luglio (F°)")
+        ylab = "Temperatura media Luglio (FÂ°)")
 rug(JulyTF, side = 2)
 dev.off()
 summary(JulyTF)
@@ -52,24 +52,24 @@ summary(JulyTF)
 
 #Anche qui dal boxplot possiamo notare la presenza di alcuni valore anomali, per l'esattezza 3, e qui
 #la distribuzione sembra essere simmetrica. Il valore mediano e la media qui sono quasi identici, 
-#rispettivamente 74 e 74.41; è da notare inoltre che il 50% delle osservazioni è compreso qui in 
-#un range molto più piccolo ossia tra 72 e 77.
+#rispettivamente 74 e 74.41; Ã¨ da notare inoltre che il 50% delle osservazioni Ã¨ compreso qui in 
+#un range molto piÃ¹ piccolo ossia tra 72 e 77.
 
 png("box_umi.png")
 boxplot(RelHum, boxwex = 0.2, main = "Box-and-whiskers plot", 
-        ylab = "Umidità relativa (%)")
+        ylab = "UmiditÃ  relativa (%)")
 rug(RelHum, side = 2)
 dev.off()
 summary(RelHum)
 
 
-#Qui, così come per JulyTF, abbiamo un range, per il 50% delle osservazioni, molto piccolo, ossia tra 55.5 e 60
-#però qui abbiamo più valori anomali, 5, che si allontanano anche di molto dal valore mediano 57 e medio 57.75
+#Qui, cosÃ¬ come per JulyTF, abbiamo un range, per il 50% delle osservazioni, molto piccolo, ossia tra 55.5 e 60
+#perÃ² qui abbiamo piÃ¹ valori anomali, 5, che si allontanano anche di molto dal valore mediano 57 e medio 57.75
 #(anche qui molto simili). La simmetria sembra essere abbastanza ragionevole.
 
 png("box_rain.png")
 boxplot(Rain, boxwex = 0.2, main = "Box-and-whiskers plot", 
-        ylab = "Quantità di pioggia (l/m2)")
+        ylab = "QuantitÃ  di pioggia (l/m2)")
 rug(Rain, side = 2)
 dev.off()
 summary(Rain)
@@ -85,8 +85,8 @@ boxplot(JanTF, JulyTF, boxwex = 0.2, main = "Box-and-whiskers plot",
 
 
 #Andando a vedere un boxplot congiunto delle due variabili riguardo la TF notiamo che, ovviamente,
-#in July le temperature sono nettamente più alte, ma ciò che incuriosisce è che durante July le
-#temperature sono molto più concentrate, ossia hanno un piccolo range, mentre in January non è così, anzi
+#in July le temperature sono nettamente piÃ¹ alte, ma ciÃ² che incuriosisce Ã¨ che durante July le
+#temperature sono molto piÃ¹ concentrate, ossia hanno un piccolo range, mentre in January non Ã¨ cosÃ¬, anzi
 #alcune temperature massime raggiungono le minime di July.
 
 
@@ -142,7 +142,7 @@ png("hist_jan.png")
 hist(JanTF)
 dens<-density(JanTF)
 hist(JanTF,probability = T, ylim = c(0, 0.06), main = "Istogramma", 
-     xlab = "Temperatura media Gennaio (°F)", ylab = "Densità")
+     xlab = "Temperatura media Gennaio (Â°F)", ylab = "DensitÃ ")
 lines(dens)
 dev.off()
 
@@ -151,7 +151,7 @@ png("hist_jul.png")
 hist(JulyTF)
 dens1<-density(JulyTF)
 hist(JulyTF,probability = T, ylim = c(0, 0.11), main = "Istogramma",
-     xlab = "Temperatura media Luglio (°F)", ylab = "Densità")
+     xlab = "Temperatura media Luglio (Â°F)", ylab = "DensitÃ ")
 lines(dens1)
 dev.off()
 
@@ -160,7 +160,7 @@ png("hist_umi.png")
 hist(RelHum)
 dens2<-density(RelHum)
 hist(RelHum,probability = T, ylim = c(0, 0.11), main = "Istogramma", 
-     xlab = "Umidità relativa (%)", ylab = "Densità")
+     xlab = "UmiditÃ  relativa (%)", ylab = "DensitÃ ")
 lines(dens2)
 dev.off()
 
@@ -169,7 +169,7 @@ png("hist_rain.png")
 hist(Rain)
 dens3<-density(Rain)
 hist(Rain,probability = T, ylim = c(0, 0.06), main = "Istogramma", 
-     xlab = "Quantità di pioggia (l/m2)", ylab = "Densità")
+     xlab = "QuantitÃ  di pioggia (l/m2)", ylab = "DensitÃ ")
 lines(dens3)
 dev.off()
 
@@ -183,7 +183,7 @@ dev.off()
 
 table(State)
 
-#Solo per vedere quante osservazioni per ogni regione, non ci dice niente di più.
+#Solo per vedere quante osservazioni per ogni regione, non ci dice niente di piÃ¹.
 
 #######Analisi bivariata
 
@@ -193,7 +193,7 @@ plot(Data[, 2:7])
 dev.off()
 
 png("plot_long_rain.png")
-plot(JulyTF, RelHum, xlab = "Longitudine (°)", ylab = "Quantità di pioggia (l/m2)", main = "Scatter plot")
+plot(JulyTF, RelHum, xlab = "Longitudine (Â°)", ylab = "QuantitÃ  di pioggia (l/m2)", main = "Scatter plot")
 dev.off()
 
 #...
@@ -242,7 +242,7 @@ cor(Data[, 2:7])
 
 png("box_janstate.png")
 boxplot(JanTF ~ State, boxwex = 0.2, xlab = "Stati", names = c("Medio-Occidente", "Nord-Est", "Sud", "Ovest"),
-        ylab = "Temperatura media Gennaio (°F)",
+        ylab = "Temperatura media Gennaio (Â°F)",
         main = "Box-and-whiskers plot")
 dev.off()
 
@@ -250,7 +250,7 @@ dev.off()
 
 png("box_julstate.png")
 boxplot(JulyTF ~ State, boxwex = 0.2, xlab = "Stati", names = c("Medio-Occidente", "Nord-Est", "Sud", "Ovest"),
-        ylab = "Temperatura media Luglio (°F)",
+        ylab = "Temperatura media Luglio (Â°F)",
         main = "Box-and-whiskers plot")
 dev.off()
 
@@ -258,7 +258,7 @@ dev.off()
 
 png("box_umistate.png")
 boxplot(RelHum ~ State, boxwex = 0.2, xlab = "Stati", names = c("Medio-Occidente", "Nord-Est", "Sud", "Ovest"),
-        ylab = "Umidità relativa (%)",
+        ylab = "UmiditÃ  relativa (%)",
         main = "Box-and-whiskers plot")
 dev.off()
 
@@ -267,7 +267,7 @@ dev.off()
 
 png("box_rainstate.png")
 boxplot(Rain ~ State, boxwex = 0.2, xlab = "Stati", names = c("Medio-Occidente", "Nord-Est", "Sud", "Ovest"),
-        ylab = "Quantità di pioggia (l/m2) ",
+        ylab = "QuantitÃ  di pioggia (l/m2) ",
         main = "Box-and-whiskers plot")
 dev.off()
 
@@ -279,91 +279,91 @@ dev.off()
 
 library(lattice)
 png("xy_lat_jan.png")
-xyplot(Data$Lat ~ Data$JanTF | Data$State , xlab = "Temperatura media Gennaio (°F)",   
+xyplot(Data$Lat ~ Data$JanTF | Data$State , xlab = "Temperatura media Gennaio (Â°F)",   
        strip = strip.custom(strip.names = F, strip.levels = T),
-       ylab = "Latitudine (°)",
+       ylab = "Latitudine (Â°)",
        main = "Scatter plot condizionato a Stati")
 dev.off()
 #si
 
 png("xy_lat_july.png")
-xyplot(Data$Lat ~ Data$JulyTF | Data$State , xlab = "Temperatura media Luglio (°F)",
+xyplot(Data$Lat ~ Data$JulyTF | Data$State , xlab = "Temperatura media Luglio (Â°F)",
        strip = strip.custom(strip.names = F, strip.levels = T),
-       ylab = "Latitudine (°)",
+       ylab = "Latitudine (Â°)",
        main = "Scatter plot condizionato a Stati")
 dev.off()
 #si
 
 
-xyplot(Data$Lat ~ Data$Rain | Data$State , xlab = "Quantità di pioggia (l/m2)",
+xyplot(Data$Lat ~ Data$Rain | Data$State , xlab = "QuantitÃ  di pioggia (l/m2)",
        strip = strip.custom(strip.names = F, strip.levels = T),
-       ylab = "Latitudine (°)",
+       ylab = "Latitudine (Â°)",
        main = "Scatter plot condizionato a Stati")
 #no
 
 png("xy_lat_umi.png")
-xyplot(Data$Lat ~ Data$RelHum | Data$State , xlab = "Umidità relativa (%)",
+xyplot(Data$Lat ~ Data$RelHum | Data$State , xlab = "UmiditÃ  relativa (%)",
        strip = strip.custom(strip.names = F, strip.levels = T),
-       ylab = "Latitudine (°)",
+       ylab = "Latitudine (Â°)",
        main = "Scatter plot condizionato a Stati")
 dev.off()
 #si
 
 png("xy_long_jan.png")
-xyplot(Data$Long ~ Data$JanTF | Data$State , xlab = "Temperatura media Gennaio (°F)",
+xyplot(Data$Long ~ Data$JanTF | Data$State , xlab = "Temperatura media Gennaio (Â°F)",
        strip = strip.custom(strip.names = F, strip.levels = T),
-       ylab = "Longitudine (°)",
+       ylab = "Longitudine (Â°)",
        main = "Scatter plot condizionato a Stati")
 dev.off()
 #si
 
 png("xy_long_july.png")
-xyplot(Data$Long ~ Data$JulyTF | Data$State , xlab = "Temperatura media Luglio (°F)",
+xyplot(Data$Long ~ Data$JulyTF | Data$State , xlab = "Temperatura media Luglio (Â°F)",
        strip = strip.custom(strip.names = F, strip.levels = T),
-       ylab = "Longitudine (°)",
+       ylab = "Longitudine (Â°)",
        main = "Scatter plot condizionato a Stati")
 dev.off()
 #si
 
 
-xyplot(Data$Long ~ Data$RelHum | Data$State , xlab = "Umidità relativa (%)",
+xyplot(Data$Long ~ Data$RelHum | Data$State , xlab = "UmiditÃ  relativa (%)",
        strip = strip.custom(strip.names = F, strip.levels = T),
-       ylab = "Longitudine (°)",
+       ylab = "Longitudine (Â°)",
        main = "Scatter plot condizionato a Stati")
 #no
 
 
-xyplot(Data$Long ~ Data$Rain | Data$State , xlab = "Quantità di pioggia (l/m2)",
+xyplot(Data$Long ~ Data$Rain | Data$State , xlab = "QuantitÃ  di pioggia (l/m2)",
        strip = strip.custom(strip.names = F, strip.levels = T),
-       ylab = "Longitudine (°)",
+       ylab = "Longitudine (Â°)",
        main = "Scatter plot condizionato a Stati")
 #no
 
 png("xy_jan_july.png")
-xyplot(Data$JanTF ~ Data$JulyTF | Data$State , xlab = "Temperatura media Luglio (°F)",
+xyplot(Data$JanTF ~ Data$JulyTF | Data$State , xlab = "Temperatura media Luglio (Â°F)",
        strip = strip.custom(strip.names = F, strip.levels = T),
-       ylab = "Temperatura media Gennaio (°F)",
+       ylab = "Temperatura media Gennaio (Â°F)",
        main = "Scatter plot condizionato a Stati")
 dev.off()
 #si
 
 
-xyplot(Data$JanTF ~ Data$Rain | Data$State , xlab = "Quantità di pioggia (l/m2)",
+xyplot(Data$JanTF ~ Data$Rain | Data$State , xlab = "QuantitÃ  di pioggia (l/m2)",
        strip = strip.custom(strip.names = F, strip.levels = T),
-       ylab = "Temperatura media Gennaio (°F)",
+       ylab = "Temperatura media Gennaio (Â°F)",
        main = "Scatter plot condizionato a Stati")
 #no
 
-xyplot(Data$JulyTF ~ Data$Rain | Data$State , xlab = "Quantità di pioggia (l/m2)",
+xyplot(Data$JulyTF ~ Data$Rain | Data$State , xlab = "QuantitÃ  di pioggia (l/m2)",
        strip = strip.custom(strip.names = F, strip.levels = T),
-       ylab = "Temperatura media Luglio (°F)",
+       ylab = "Temperatura media Luglio (Â°F)",
        main = "Scatter plot condizionato a Stati")
 #no
 
 
-xyplot(Data$RelHum ~ Data$Rain | Data$State , xlab = "Quantità di pioggia (l/m2)",
+xyplot(Data$RelHum ~ Data$Rain | Data$State , xlab = "QuantitÃ  di pioggia (l/m2)",
        strip = strip.custom(strip.names = F, strip.levels = T),
-       ylab = "Umidità relativa (%)",
+       ylab = "UmiditÃ  relativa (%)",
        main = "Scatter plot condizionato a Stati")
 
 #...
@@ -377,7 +377,7 @@ plot(Data[, 2:7], pch = 21, bg = c("red", "blue", "black", "green"),
 #1
 png("ecdf_jan.png")
 plot(ecdf(JanTF), do.points = F, verticals = T,
-     xlab = "Temperatura media Gennaio (°F)", ylab = "Probabilità",
+     xlab = "Temperatura media Gennaio (Â°F)", ylab = "ProbabilitÃ ",
      main = "Funzione di ripartizione empirica")
 rug(JanTF)
 dev.off()
@@ -385,7 +385,7 @@ dev.off()
 #2
 png("ecdf_july.png")
 plot(ecdf(JulyTF), do.points = F, verticals = T,
-     xlab = "Temperatura media Gennaio (°F)", ylab = "Probabilità",
+     xlab = "Temperatura media Gennaio (Â°F)", ylab = "ProbabilitÃ ",
      main = "Funzione di ripartizione empirica")
 rug(JulyTF)
 dev.off()
@@ -393,7 +393,7 @@ dev.off()
 #3
 png("ecdf_umi.png")
 plot(ecdf(RelHum), do.points = F, verticals = T,
-     xlab = "Umidità relativa (%)", ylab = "Probabilità",
+     xlab = "UmiditÃ  relativa (%)", ylab = "ProbabilitÃ ",
      main = "Funzione di ripartizione empirica")
 rug(RelHum)
 dev.off()
@@ -401,7 +401,7 @@ dev.off()
 #4
 png("ecdf_rain.png")
 plot(ecdf(Rain), do.points = F, verticals = T,
-     xlab = "Quantità di pioggia (l/m2)", ylab = "Probabilità",
+     xlab = "QuantitÃ  di pioggia (l/m2)", ylab = "ProbabilitÃ ",
      main = "Funzione di ripartizione empirica")
 rug(Rain)
 dev.off()
@@ -418,7 +418,7 @@ attach(Data)
 #map("state", boundary = FALSE, col="gray", add = TRUE, plot = T)
 #map.axes(cex.axis=0.8)
 
-#register_google(key = "AIzaSyD75L49uHAh5tCIHCR6TZbrQ8w83qSS3s8")
+
 
 library(maps)
 library(ggplot2)
@@ -434,12 +434,12 @@ usa_map <- map_data("state")
 
 #p=gennaio
 p <- ggplot() + coord_fixed() +
-  xlab("Longitudine (°)") + ylab("Latitudine (°)") + scale_color_gradient(low="84C3BE", high="#FFDB58") 
+  xlab("Longitudine (Â°)") + ylab("Latitudine (Â°)") + scale_color_gradient(low="84C3BE", high="#FFDB58") 
   
 
 #p1=luglio
 p1 <- ggplot() + coord_fixed() +
-  xlab("Longitudine (°)") + ylab("Latitudine (°)") + scale_color_gradient(low="#FFDB58", high="#FF0000")
+  xlab("Longitudine (Â°)") + ylab("Latitudine (Â°)") + scale_color_gradient(low="#FFDB58", high="#FF0000")
 
   ?scale_color_gradient
 
@@ -505,7 +505,7 @@ qqline(JulyTF)
 dev.off()
 shapiro.test(JulyTF)
 
-#Normalità qui
+#NormalitÃ  qui
 
 qqnorm(RelHum)
 qqline(RelHum)
@@ -526,58 +526,58 @@ library(sm)
 #JanTF
 
 sm.density(JanTF, 1.0, yht = 0.12, xlim = c(15, 60),
-             xlab = "Temperatura media Gennaio (°F)", ylab = "Probabilità")
-title(main = "Stima della densità Kernel (h = 1.00)")
+             xlab = "Temperatura media Gennaio (Â°F)", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel (h = 1.00)")
 
 sm.density(JanTF, 2.0, yht = 0.12, xlim = c(15, 60),
-           xlab = "Temperatura media Gennaio (°F)", ylab = "Probabilità")
-title(main = "Stima della densità Kernel (h = 2.00)")
+           xlab = "Temperatura media Gennaio (Â°F)", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel (h = 2.00)")
 
 sm.density(JanTF, 3.0, yht = 0.12, xlim = c(15, 60),
-           xlab = "Temperatura media Gennaio (°F)", ylab = "Probabilità")
-title(main = "Stima della densità Kernel (h = 3.00)")
+           xlab = "Temperatura media Gennaio (Â°F)", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel (h = 3.00)")
 
 #JulyTF
 
 sm.density(JulyTF, 1.0, yht = 0.12, xlim = c(60, 90),
-           xlab = "Temperatura media Luglio (°F)", ylab = "Probabilità")
-title(main = "Stima della densità Kernel (h = 1.00)")
+           xlab = "Temperatura media Luglio (Â°F)", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel (h = 1.00)")
 
 sm.density(JulyTF, 2.0, yht = 0.12, xlim = c(60, 90),
-           xlab = "Temperatura media Luglio (°F)", ylab = "Probabilità")
-title(main = "Stima della densità Kernel (h = 2.00)")
+           xlab = "Temperatura media Luglio (Â°F)", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel (h = 2.00)")
 
 sm.density(JulyTF, 3.0, yht = 0.12, xlim = c(60, 90),
-           xlab = "Temperatura media Luglio (°F)", ylab = "Probabilità")
-title(main = "Stima della densità Kernel (h = 3.00)")
+           xlab = "Temperatura media Luglio (Â°F)", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel (h = 3.00)")
 
 #RelHum
 
 sm.density(RelHum, 1.0, yht = 0.12, xlim = c(30, 80),
-           xlab = "Umidità relativa (%)", ylab = "Probabilità")
-title(main = "Stima della densità Kernel (h = 1.00)")
+           xlab = "UmiditÃ  relativa (%)", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel (h = 1.00)")
 
 sm.density(RelHum, 2.0, yht = 0.12, xlim = c(30, 80),
-           xlab = "Umidità relativa (%)", ylab = "Probabilità")
-title(main = "Stima della densità Kernel (h = 2.00)")
+           xlab = "UmiditÃ  relativa (%)", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel (h = 2.00)")
 
 sm.density(RelHum, 3.0, yht = 0.12, xlim = c(30, 80),
-           xlab = "Umidità relativa (%)", ylab = "Probabilità")
-title(main = "Stima della densità Kernel (h = 3.00)")
+           xlab = "UmiditÃ  relativa (%)", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel (h = 3.00)")
 
 #Rain
 
 sm.density(Rain, 1.0, yht = 0.08, xlim = c(0, 80),
-           xlab = "Quantità di pioggia (l/m2)", ylab = "Probabilità")
-title(main = "Stima della densità Kernel (h = 1.00)")
+           xlab = "QuantitÃ  di pioggia (l/m2)", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel (h = 1.00)")
 
 sm.density(Rain, 2.0, yht = 0.08, xlim = c(0, 80),
-           xlab = "Quantità di pioggia (l/m2)", ylab = "Probabilità")
-title(main = "Stima della densità Kernel (h = 2.00)")
+           xlab = "QuantitÃ  di pioggia (l/m2)", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel (h = 2.00)")
 
 sm.density(Rain, 3.0, yht = 0.08, xlim = c(0, 80),
-           xlab = "Quantità di pioggia (l/m2)", ylab = "Probabilità")
-title(main = "Stima della densità Kernel (h = 3.00)")
+           xlab = "QuantitÃ  di pioggia (l/m2)", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel (h = 3.00)")
 
 ##Parametro di smorzamento automatico
 #JanTF_Plugin
@@ -587,56 +587,56 @@ par(mfrow=c(1,2))
 png("dens_jan.png")
 par(mfrow=c(1,2))
 sm.density(JanTF, hsj(JanTF), yht= 0.12, xlim = c(15, 60),
-           xlab = "Temperatura media Gennaio (°F)", ylab = "Probabilità")
-title(main = "Stima densità ('Plug-in h=2.85')")
+           xlab = "Temperatura media Gennaio (Â°F)", ylab = "ProbabilitÃ ")
+title(main = "Stima densitÃ  ('Plug-in h=2.85')")
 
 #JanTF_CV
 
 sm.density(JanTF, hcv(JanTF, hstart = 1, hend = 4.00),
-             yht = 0.12, xlim = c(15, 60), xlab = "Temperatura media Gennaio (°F)", ylab = "Probabilità")
-title(main = "Stima densità ('CV h=3.15')")
+             yht = 0.12, xlim = c(15, 60), xlab = "Temperatura media Gennaio (Â°F)", ylab = "ProbabilitÃ ")
+title(main = "Stima densitÃ  ('CV h=3.15')")
 dev.off()
 
 #JulyTF_Plugin
 png("den_july.png")
 par(mfrow=c(1,2))
 sm.density(JulyTF, hsj(JulyTF), yht= 0.12, xlim = c(60, 90),
-           xlab = "Temperatura media Luglio (°F)", ylab = "Probabilità")
-title(main = "Stima densità ('Plug-in h=1.49')")
+           xlab = "Temperatura media Luglio (Â°F)", ylab = "ProbabilitÃ ")
+title(main = "Stima densitÃ  ('Plug-in h=1.49')")
 
 #JulyTF_CV
 
 sm.density(JulyTF, hcv(JulyTF, hstart = 1, hend = 4.00),
-           yht = 0.12, xlim = c(60, 90), xlab = "Temperatura media Luglio (°F)", ylab = "Probabilità")
-title(main = "Stima densità ('CV h=1.78')")
+           yht = 0.12, xlim = c(60, 90), xlab = "Temperatura media Luglio (Â°F)", ylab = "ProbabilitÃ ")
+title(main = "Stima densitÃ  ('CV h=1.78')")
 dev.off()
 
 #RelHum_Plugin
 png("dens_umi.png")
 par(mfrow=c(1,2))
 sm.density(RelHum, hsj(RelHum), yht= 0.12, xlim = c(30, 80),
-           xlab = "Umidità relativa (%)", ylab = "Probabilità")
-title(main = "Stima densità ('Plug-in h=1.50')")
+           xlab = "UmiditÃ  relativa (%)", ylab = "ProbabilitÃ ")
+title(main = "Stima densitÃ  ('Plug-in h=1.50')")
 
 #RelHum_CV
 
 sm.density(RelHum, hcv(RelHum, hstart = 1, hend = 4.00),
-           yht = 0.12, xlim = c(30, 80), xlab = "Umidità relativa (%)", ylab = "Probabilità")
-title(main = "Stima densità ('CV h=1.79')")
+           yht = 0.12, xlim = c(30, 80), xlab = "UmiditÃ  relativa (%)", ylab = "ProbabilitÃ ")
+title(main = "Stima densitÃ  ('CV h=1.79')")
 dev.off()
 
 #Rain_Plugin
 png("dens_rain.png")
 par(mfrow=c(1,2))
 sm.density(Rain, hsj(Rain), yht= 0.08, xlim = c(0, 80),
-           xlab = "Quantità di pioggia (l/m2)", ylab = "Probabilità")
-title(main = "Stima densità ('Plug-in h=3.35')")
+           xlab = "QuantitÃ  di pioggia (l/m2)", ylab = "ProbabilitÃ ")
+title(main = "Stima densitÃ  ('Plug-in h=3.35')")
 
 #Rain_CV
 
 sm.density(Rain, hcv(Rain, hstart = 1, hend = 4.00),
-           yht = 0.08, xlim = c(0, 80), xlab = "Quantità di pioggia (l/m2)", ylab = "Probabilità")
-title(main = "Stima densità ('CV h=1.75')")
+           yht = 0.08, xlim = c(0, 80), xlab = "QuantitÃ  di pioggia (l/m2)", ylab = "ProbabilitÃ ")
+title(main = "Stima densitÃ  ('CV h=1.75')")
 dev.off()
 
 ########Stimatori di nucleo bivariati
@@ -648,29 +648,15 @@ hcv_long_jan<-c(hcv(Long, hstart = 1, hend = 5), hcv(JanTF, hstart = 1, hend = 4
 png("biv_long_jan.png")
 par(mfrow=c(1, 2))
 plot(-Long, JanTF, xlim = c(-125, -65), ylim = c(10, 70),
-     xlab = "Longitudine(°)", ylab = "Temperatura media Gennaio (°F)")
+     xlab = "Longitudine(Â°)", ylab = "Temperatura media Gennaio (Â°F)")
 sm.density(Data[, c(3, 4)], hcv_long_jan, display = "slice",
            props = c(75, 50, 25, 2), add = T)
-title(main = "Stima densità ('CV h1=3.16 h2=3.15')")
+title(main = "Stima densitÃ  ('CV h1=3.16 h2=3.15')")
 
 sm.density(Data[, c(3, 4)], hcv_long_jan, display = "image", xlim = c(-125, -65), ylim = c(10, 70),
-           xlab = "Longitudine (°)", ylab = "Temperatura media Gennaio (°F)")
-title(main = "Stima densità ('CV h1=3.16 h2=3.15')")
+           xlab = "Longitudine (Â°)", ylab = "Temperatura media Gennaio (Â°F)")
+title(main = "Stima densitÃ  ('CV h1=3.16 h2=3.15')")
 dev.off()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -695,28 +681,28 @@ summary(JanTF)
 png("biv_lat_jan.png")
 par(mfrow=c(1, 2))
 plot(Lat, JanTF, xlim = c(20, 55), ylim = c(10, 70),
-     xlab = "Latitudine(°)", ylab = "Temperatura media Gennaio (°F)")
+     xlab = "Latitudine(Â°)", ylab = "Temperatura media Gennaio (Â°F)")
 sm.density(Data[, c(2, 4)], hcv_lat_jan, display = "slice",
            props = c(75, 50, 25, 2), add = T)
-title(main = "Stima densità ('CV h1=1.44 h2=3.15')")
+title(main = "Stima densitÃ  ('CV h1=1.44 h2=3.15')")
 
 sm.density(Data[, c(2, 4)], hcv_lat_jan, display = "image", xlim = c(20, 55), ylim = c(10, 70),
-           xlab = "Latitudine (°)", ylab = "Temperatura media Gennaio (°F)")
-title(main = "Stima densità ('CV h1=1.44 h2=3.15')")
+           xlab = "Latitudine (Â°)", ylab = "Temperatura media Gennaio (Â°F)")
+title(main = "Stima densitÃ  ('CV h1=1.44 h2=3.15')")
 dev.off()
 #h1=3.15, h2=1.78
 
 #hsj
 par(mfrow=c(1, 2))
 plot(Lat, JanTF, xlim = c(15, 60), ylim = c(60, 90),
-     xlab = "lat", ylab = "Temperatura media Luglio (°F)")
+     xlab = "lat", ylab = "Temperatura media Luglio (Â°F)")
 sm.density(Data[, c(4, 5)], hsj_lat, display = "slice",
            props = c(75, 50, 25, 2), add = T)
-title(main = "Stima della densità Kernel ('Plug-in')")
+title(main = "Stima della densitÃ  Kernel ('Plug-in')")
 
 sm.density(Data[, c(4, 5)], hsj_lat, display = "image", xlim = c(15, 60), ylim = c(60, 90),
-           xlab = "lat", ylab = "Temperatura media Luglio (°F)")
-title(main = "Stima della densità Kernel ('Plug-in')")
+           xlab = "lat", ylab = "Temperatura media Luglio (Â°F)")
+title(main = "Stima della densitÃ  Kernel ('Plug-in')")
 #h1=2.85, h2=1.49
 
 
@@ -738,14 +724,14 @@ title(main = "Kernel density estimation ('CV' h1 = 0.06, h2 = 0.03)")
 png("biv_jan_lug.png")
 par(mfrow=c(1, 2))
 plot(JanTF, JulyTF, xlim = c(15, 60), ylim = c(60, 90),
-       xlab = "Temperatura media Gennaio (°F)", ylab = "Temperatura media Luglio (°F)")
+       xlab = "Temperatura media Gennaio (Â°F)", ylab = "Temperatura media Luglio (Â°F)")
 sm.density(Data[, c(4, 5)], hcv, display = "slice",
              props = c(75, 50, 25, 2), add = T)
-title(main = "Stima della densità Kernel ('CV h1=3.15 h2=1.78')")
+title(main = "Stima della densitÃ  Kernel ('CV h1=3.15 h2=1.78')")
 
 sm.density(Data[, c(4, 5)], hcv, display = "image", xlim = c(15, 60), ylim = c(60, 90),
-             xlab = "Temperatura media Gennaio (°F)", ylab = "Temperatura media Luglio (°F)")
-title(main = "Stima della densità Kernel ('CV h1=3.15 h2=1.78')")
+             xlab = "Temperatura media Gennaio (Â°F)", ylab = "Temperatura media Luglio (Â°F)")
+title(main = "Stima della densitÃ  Kernel ('CV h1=3.15 h2=1.78')")
 dev.off()
 #h1=3.15, h2=1.78
 
@@ -753,14 +739,14 @@ dev.off()
 #hsj
 par(mfrow=c(1, 2))
 plot(JanTF, JulyTF, xlim = c(15, 60), ylim = c(60, 90),
-     xlab = "Temperatura media Gennaio (°F)", ylab = "Temperatura media Luglio (°F)")
+     xlab = "Temperatura media Gennaio (Â°F)", ylab = "Temperatura media Luglio (Â°F)")
 sm.density(Data[, c(4, 5)], hsj, display = "slice",
            props = c(75, 50, 25, 2), add = T)
-title(main = "Stima della densità Kernel ('Plug-in')")
+title(main = "Stima della densitÃ  Kernel ('Plug-in')")
 
 sm.density(Data[, c(4, 5)], hsj, display = "image", xlim = c(15, 60), ylim = c(60, 90),
-           xlab = "Temperatura media Gennaio (°F)", ylab = "Temperatura media Luglio (°F)")
-title(main = "Stima della densità Kernel ('Plug-in')")
+           xlab = "Temperatura media Gennaio (Â°F)", ylab = "Temperatura media Luglio (Â°F)")
+title(main = "Stima della densitÃ  Kernel ('Plug-in')")
 #h1=2.85, h2=1.49
 
 
@@ -780,27 +766,27 @@ title(main = "Kernel density estimation ('CV' h1 = 2.85, h2 = 1.5)")
 #hcv
 par(mfrow=c(1, 2))
 plot(JanTF, RelHum, xlim = c(15, 60), ylim = c(30, 80),
-     xlab = "Temperatura media Gennaio (°F)", ylab = "Temperatura media Luglio (°F)")
+     xlab = "Temperatura media Gennaio (Â°F)", ylab = "Temperatura media Luglio (Â°F)")
 sm.density(Data[, c(4, 6)], hcv1, display = "slice",
            props = c(75, 50, 25, 2), add = T)
-title(main = "Stima della densità Kernel ('CV')")
+title(main = "Stima della densitÃ  Kernel ('CV')")
 
 sm.density(Data[, c(4, 6)], hcv1, display = "image", xlim = c(15, 60), ylim = c(30, 80),
-           xlab = "Temperatura media Gennaio (°F)", ylab = "Temperatura media Luglio (°F)")
-title(main = "Stima della densità Kernel ('CV')")
+           xlab = "Temperatura media Gennaio (Â°F)", ylab = "Temperatura media Luglio (Â°F)")
+title(main = "Stima della densitÃ  Kernel ('CV')")
 #h1=3.15, h2=1.8
 
 #hsj
 par(mfrow=c(1, 2))
 plot(JanTF, RelHum, xlim = c(15, 60), ylim = c(30, 80),
-     xlab = "Temperatura media Gennaio (°F)", ylab = "Temperatura media Luglio (°F)")
+     xlab = "Temperatura media Gennaio (Â°F)", ylab = "Temperatura media Luglio (Â°F)")
 sm.density(Data[, c(4, 6)], hsj1, display = "slice",
            props = c(75, 50, 25, 2), add = T)
-title(main = "Stima della densità Kernel ('Plug-in')")
+title(main = "Stima della densitÃ  Kernel ('Plug-in')")
 
 sm.density(Data[, c(4, 6)], hsj1, display = "image", xlim = c(15, 60), ylim = c(30, 80),
-           xlab = "Temperatura media Gennaio (°F)", ylab = "Temperatura media Luglio (°F)")
-title(main = "Stima della densità Kernel ('Plug-in')")
+           xlab = "Temperatura media Gennaio (Â°F)", ylab = "Temperatura media Luglio (Â°F)")
+title(main = "Stima della densitÃ  Kernel ('Plug-in')")
 #h1=2.85, h2=1.5
 
 
@@ -820,27 +806,27 @@ title(main = "Kernel density estimation ('CV' h1 = 2.85, h2 = 1.5)")
 #hcv
 par(mfrow=c(1, 2))
 plot(JanTF, Rain, xlim = c(15, 60), ylim = c(0, 80),
-     xlab = "Temperatura media Gennaio (°F)", ylab = "Temperatura media Luglio (°F)")
+     xlab = "Temperatura media Gennaio (Â°F)", ylab = "Temperatura media Luglio (Â°F)")
 sm.density(Data[, c(4, 7)], hcv2, display = "slice",
            props = c(75, 50, 25, 2), add = T)
-title(main = "Stima della densità Kernel ('CV')")
+title(main = "Stima della densitÃ  Kernel ('CV')")
 
 sm.density(Data[, c(4, 7)], hcv2, display = "image", xlim = c(15, 60), ylim = c(0, 80),
-           xlab = "Temperatura media Gennaio (°F)", ylab = "Temperatura media Luglio (°F)")
-title(main = "Stima della densità Kernel ('CV')")
+           xlab = "Temperatura media Gennaio (Â°F)", ylab = "Temperatura media Luglio (Â°F)")
+title(main = "Stima della densitÃ  Kernel ('CV')")
 #h1=3.15 h2=1.75
 
 #hsj
 par(mfrow=c(1, 2))
 plot(JanTF, Rain, xlim = c(15, 60), ylim = c(0, 80),
-     xlab = "Temperatura media Gennaio (°F)", ylab = "Temperatura media Luglio (°F)")
+     xlab = "Temperatura media Gennaio (Â°F)", ylab = "Temperatura media Luglio (Â°F)")
 sm.density(Data[, c(4, 7)], hsj2, display = "slice",
            props = c(75, 50, 25, 2), add = T)
-title(main = "Stima della densità Kernel ('Plug-in')")
+title(main = "Stima della densitÃ  Kernel ('Plug-in')")
 
 sm.density(Data[, c(4, 7)], hsj2, display = "image", xlim = c(15, 60), ylim = c(0, 80),
-           xlab = "Temperatura media Gennaio (°F)", ylab = "Temperatura media Luglio (°F)")
-title(main = "Stima della densità Kernel ('Plug-in')")
+           xlab = "Temperatura media Gennaio (Â°F)", ylab = "Temperatura media Luglio (Â°F)")
+title(main = "Stima della densitÃ  Kernel ('Plug-in')")
 #h1=2.85 h2=3.35
 
 
@@ -860,27 +846,27 @@ title(main = "Kernel density estimation ('CV' h1 = 1.49, h2 = 1.5)")
 #hcv
 par(mfrow=c(1, 2))
 plot(JulyTF, RelHum, xlim = c(60, 90), ylim = c(30, 80),
-     xlab = "Temperatura media Gennaio (°F)", ylab = "Temperatura media Luglio (°F)")
+     xlab = "Temperatura media Gennaio (Â°F)", ylab = "Temperatura media Luglio (Â°F)")
 sm.density(Data[, c(5, 6)], hcv3, display = "slice",
            props = c(75, 50, 25, 2), add = T)
-title(main = "Stima della densità Kernel ('CV')")
+title(main = "Stima della densitÃ  Kernel ('CV')")
 
 sm.density(Data[, c(5, 6)], hcv3, display = "image", xlim = c(60, 90), ylim = c(30, 80),
-           xlab = "Temperatura media Gennaio (°F)", ylab = "Temperatura media Luglio (°F)")
-title(main = "Stima della densità Kernel ('CV')")
+           xlab = "Temperatura media Gennaio (Â°F)", ylab = "Temperatura media Luglio (Â°F)")
+title(main = "Stima della densitÃ  Kernel ('CV')")
 #h1=3.15 h2=1.75
 
 #hsj
 par(mfrow=c(1, 2))
 plot(JulyTF, RelHum, xlim = c(60, 90), ylim = c(30, 80),
-     xlab = "Temperatura media Gennaio (°F)", ylab = "Temperatura media Luglio (°F)")
+     xlab = "Temperatura media Gennaio (Â°F)", ylab = "Temperatura media Luglio (Â°F)")
 sm.density(Data[, c(5, 6)], hsj3, display = "slice",
            props = c(75, 50, 25, 2), add = T)
-title(main = "Stima della densità Kernel ('Plug-in')")
+title(main = "Stima della densitÃ  Kernel ('Plug-in')")
 
 sm.density(Data[, c(5, 6)], hsj3, display = "image", xlim = c(60, 90), ylim = c(30, 80),
-           xlab = "Temperatura media Gennaio (°F)", ylab = "Temperatura media Luglio (°F)")
-title(main = "Stima della densità Kernel ('Plug-in')")
+           xlab = "Temperatura media Gennaio (Â°F)", ylab = "Temperatura media Luglio (Â°F)")
+title(main = "Stima della densitÃ  Kernel ('Plug-in')")
 #h1=1.49 h2=1.5
 
 
@@ -901,26 +887,26 @@ title(main = "Kernel density estimation ('CV' h1 = 1.49, h2 = 3.35)")
 png("biv_jul_rain.png")
 par(mfrow=c(1, 2))
 plot(JulyTF, Rain, xlim = c(60, 90), ylim = c(0, 80),
-     xlab = "Temperatura media Luglio (°F)", ylab = "Quantità di pioggia (l/m2)")
+     xlab = "Temperatura media Luglio (Â°F)", ylab = "QuantitÃ  di pioggia (l/m2)")
 sm.density(Data[, c(5, 7)], hcv4, display = "slice",
            props = c(75, 50, 25, 2), add = T)
-title(main = "Stima densità ('CV' h1=1.78, h2=1.75)")
+title(main = "Stima densitÃ  ('CV' h1=1.78, h2=1.75)")
 
 sm.density(Data[, c(5, 7)], hcv4, display = "image", xlim = c(60, 90), ylim = c(0, 80),
-           xlab = "Temperatura media Luglio (°F)", ylab = "Quantità di pioggia (l/m2)")
-title(main = "Stima densità ('CV' h1=1.78, h2=1.75)")
+           xlab = "Temperatura media Luglio (Â°F)", ylab = "QuantitÃ  di pioggia (l/m2)")
+title(main = "Stima densitÃ  ('CV' h1=1.78, h2=1.75)")
 dev.off()
 
 #hsj
 par(mfrow=c(1, 2))
 plot(JulyTF, Rain, xlim = c(60, 90), ylim = c(0, 80),
-     xlab = "Temperature January (°F)", ylab = "Temperature July (°F)")
+     xlab = "Temperature January (Â°F)", ylab = "Temperature July (Â°F)")
 sm.density(Data[, c(5, 7)], hsj2, display = "slice",
            props = c(75, 50, 25, 2), add = T)
 title(main = "Kernel density estimation ('Plug-in' h1 = 2.85, h2 = 3.35)")
 
 sm.density(Data[, c(5, 7)], hsj4, display = "image", xlim = c(60, 90), ylim = c(0, 80),
-           xlab = "Temperature January (°F)", ylab = "Temperature July (°F)")
+           xlab = "Temperature January (Â°F)", ylab = "Temperature July (Â°F)")
 title(main = "Kernel density estimation ('Plug-in' h1 = 2.85, h2 = 3.35)")
 
 
@@ -941,98 +927,98 @@ title(main = "Kernel density estimation ('CV' h1 = 1.5, h2 = 3.35)")
 #hcv
 par(mfrow=c(1, 2))
 plot(RelHum, Rain, xlim = c(30, 80), ylim = c(0, 80),
-     xlab = "Temperature January (°F)", ylab = "Temperature July (°F)")
+     xlab = "Temperature January (Â°F)", ylab = "Temperature July (Â°F)")
 sm.density(Data[, c(6, 7)], hcv5, display = "slice",
            props = c(75, 50, 25, 2), add = T)
 title(main = "Kernel density estimation ('CV' h1 = 3.15, h2 = 1.75)")
 
 sm.density(Data[, c(6, 7)], hcv5, display = "image", xlim = c(30, 80), ylim = c(0, 80),
-           xlab = "Temperature January (°F)", ylab = "Temperature July (°F)")
+           xlab = "Temperature January (Â°F)", ylab = "Temperature July (Â°F)")
 title(main = "Kernel density estimation ('CV' h1 = 3.15, h2 = 1.75)")
 
 #hsj
 par(mfrow=c(1, 2))
 plot(RelHum, Rain, xlim = c(30, 80), ylim = c(0, 80),
-     xlab = "Temperature January (°F)", ylab = "Temperature July (°F)")
+     xlab = "Temperature January (Â°F)", ylab = "Temperature July (Â°F)")
 sm.density(Data[, c(6, 7)], hsj5, display = "slice",
            props = c(75, 50, 25, 2), add = T)
 title(main = "Kernel density estimation ('Plug-in' h1 = 2.85, h2 = 3.35)")
 
 sm.density(Data[, c(6, 7)], hsj5, display = "image", xlim = c(30, 80), ylim = c(0, 80),
-           xlab = "Temperature January (°F)", ylab = "Temperature July (°F)")
+           xlab = "Temperature January (Â°F)", ylab = "Temperature July (Â°F)")
 title(main = "Kernel density estimation ('Plug-in' h1 = 2.85, h2 = 3.35)")
 
 
 #####Regressione lineare locale
 #JanTF, Lat
 par(mfrow=c(1, 3))
-plot(Lat, JanTF, xlab = "Latitudine (°)",
-       ylab = "Temperatura media Gennaio (°F)")
+plot(Lat, JanTF, xlab = "Latitudine (Â°)",
+       ylab = "Temperatura media Gennaio (Â°F)")
 sm.regression(Lat, JanTF, h = 1.00, add = T)
 title(main = "Regressione lineare locale (h = 1.00)")
-plot(Lat, JanTF, xlab = "Latitudine (°)",
-     ylab = "Temperatura media Gennaio (°F)")
+plot(Lat, JanTF, xlab = "Latitudine (Â°)",
+     ylab = "Temperatura media Gennaio (Â°F)")
 sm.regression(Lat, JanTF, h = 2.50, add = T)
 title(main = "Regressione lineare locale (h = 2.50)")
-plot(Lat, JanTF, xlab = "Latitudine (°)",
-     ylab = "Temperatura media Gennaio (°F)")
+plot(Lat, JanTF, xlab = "Latitudine (Â°)",
+     ylab = "Temperatura media Gennaio (Â°F)")
 sm.regression(Lat, JanTF, h = 4.00, add = T)
 title(main = "Regressione lineare locale (h = 4.00)")
 
 
 #JanTF, Long
-plot(Long, JanTF, xlab = "Longitudine (°)",
-     ylab = "Temperatura media Gennaio (°F)")
+plot(Long, JanTF, xlab = "Longitudine (Â°)",
+     ylab = "Temperatura media Gennaio (Â°F)")
 sm.regression(Long, JanTF, h = 1.00, add = T)
 title(main = "Regressione lineare locale (h = 1.00)")
-plot(Long, JanTF, xlab = "Longitudine (°)",
-     ylab = "Temperatura media Gennaio (°F)")
+plot(Long, JanTF, xlab = "Longitudine (Â°)",
+     ylab = "Temperatura media Gennaio (Â°F)")
 sm.regression(Long, JanTF, h = 3.00, add = T)
 title(main = "Regressione lineare locale (h = 3.00)")
-plot(Long, JanTF, xlab = "Longitudine (°)",
-     ylab = "Temperatura media Gennaio (°F)")
+plot(Long, JanTF, xlab = "Longitudine (Â°)",
+     ylab = "Temperatura media Gennaio (Â°F)")
 sm.regression(Long, JanTF, h = 4.20, add = T)
 title(main = "Regressione lineare locale (h = 4.20)")
 
 #JulyTF, Lat
-plot(Lat, JulyTF, xlab = "Latitudine (°)",
-     ylab = "Temperatura media Luglio (°F)")
+plot(Lat, JulyTF, xlab = "Latitudine (Â°)",
+     ylab = "Temperatura media Luglio (Â°F)")
 sm.regression(Lat, JulyTF, h = 0.5, add = T)
 title(main = "Regressione lineare locale (h = 0.50)")
-plot(Lat, JulyTF, xlab = "Latitudine (°)",
-     ylab = "Temperatura media Luglio (°F)")
+plot(Lat, JulyTF, xlab = "Latitudine (Â°)",
+     ylab = "Temperatura media Luglio (Â°F)")
 sm.regression(Lat, JulyTF, h = 1.50, add = T)
 title(main = "Regressione lineare locale (h = 1.50)")
-plot(Lat, JulyTF, xlab = "Latitudine (°)",
-     ylab = "Temperatura media Luglio (°F)")
+plot(Lat, JulyTF, xlab = "Latitudine (Â°)",
+     ylab = "Temperatura media Luglio (Â°F)")
 sm.regression(Lat, JulyTF, h = 2.50, add = T)
 title(main = "Regressione lineare locale (h = 1.50)")
 
 #JulyTF, Long
-plot(Long, JulyTF, xlab = "Longitudine (°)",
-     ylab = "Temperatura media Luglio (°F)")
+plot(Long, JulyTF, xlab = "Longitudine (Â°)",
+     ylab = "Temperatura media Luglio (Â°F)")
 sm.regression(Long, JulyTF, h = 1.5, add = T)
 title(main = "Regressione lineare locale (h = 1.50)")
-plot(Long, JulyTF, xlab = "Longitudine (°)",
-     ylab = "Temperatura media Luglio (°F)")
+plot(Long, JulyTF, xlab = "Longitudine (Â°)",
+     ylab = "Temperatura media Luglio (Â°F)")
 sm.regression(Long, JulyTF, h = 2.5, add = T)
 title(main = "Regressione lineare locale (h = 2.50)")
-plot(Long, JulyTF, xlab = "Longitudine (°)",
-     ylab = "Temperatura media Luglio (°F)")
+plot(Long, JulyTF, xlab = "Longitudine (Â°)",
+     ylab = "Temperatura media Luglio (Â°F)")
 sm.regression(Long, JulyTF, h = 3.5, add = T)
 title(main = "Regressione lineare locale (h = 3.50)")
 
 #JulyTF, JanTF
-plot(JanTF, JulyTF, xlab = "Temperatura media Gennaio (°F)",
-     ylab = "Temperatura media Luglio (°F)")
+plot(JanTF, JulyTF, xlab = "Temperatura media Gennaio (Â°F)",
+     ylab = "Temperatura media Luglio (Â°F)")
 sm.regression(JanTF, JulyTF, h = 1.5, add = T)
 title(main = "Regressione lineare locale (h = 1.50)")
-plot(JanTF, JulyTF, xlab = "Temperatura media Gennaio (°F)",
-     ylab = "Temperatura media Luglio (°F)")
+plot(JanTF, JulyTF, xlab = "Temperatura media Gennaio (Â°F)",
+     ylab = "Temperatura media Luglio (Â°F)")
 sm.regression(JanTF, JulyTF, h = 2.5, add = T)
 title(main = "Regressione lineare locale (h = 2.50)")
-plot(JanTF, JulyTF, xlab = "Temperatura media Gennaio (°F)",
-     ylab = "Temperatura media Luglio (°F)")
+plot(JanTF, JulyTF, xlab = "Temperatura media Gennaio (Â°F)",
+     ylab = "Temperatura media Luglio (Â°F)")
 sm.regression(JanTF, JulyTF, h = 3.5, add = T)
 title(main = "Regressione lineare locale (h = 3.50)")
 
@@ -1040,43 +1026,43 @@ title(main = "Regressione lineare locale (h = 3.50)")
 
 #JanTF, Lat
 par(mfrow=c(1, 2))
-plot(Lat, JanTF, xlab = "Latitudine (°)",
-       ylab = "Temperatura media Gennaio (°F)")
+plot(Lat, JanTF, xlab = "Latitudine (Â°)",
+       ylab = "Temperatura media Gennaio (Â°F)")
 sm.regression(Lat, JanTF, method = "df", add = TRUE)
-plot(Lat, JanTF, xlab = "Latitudine (°)",
-       ylab = "Temperatura media Gennaio (°F)")
+plot(Lat, JanTF, xlab = "Latitudine (Â°)",
+       ylab = "Temperatura media Gennaio (Â°F)")
 sm.regression(Lat, JanTF, method = "cv", add = TRUE)
 
 #JanTF, Long
-plot(Long, JanTF, xlab = "Longitudine (°)",
-     ylab = "Temperatura media Gennaio (°F)")
+plot(Long, JanTF, xlab = "Longitudine (Â°)",
+     ylab = "Temperatura media Gennaio (Â°F)")
 sm.regression(Long, JanTF, method = "df", add = TRUE)
-plot(Long, JanTF, xlab = "Longitudine (°)",
-     ylab = "Temperatura media Gennaio (°F)")
+plot(Long, JanTF, xlab = "Longitudine (Â°)",
+     ylab = "Temperatura media Gennaio (Â°F)")
 sm.regression(Long, JanTF, method = "cv", add = TRUE)
 
 #JulyTF, Lat
-plot(Lat, JulyTF, xlab = "Latitudine (°)",
-     ylab = "Temperatura media Gennaio (°F)")
+plot(Lat, JulyTF, xlab = "Latitudine (Â°)",
+     ylab = "Temperatura media Gennaio (Â°F)")
 sm.regression(Lat, JulyTF, method = "df", add = TRUE)
-plot(Lat, JulyTF, xlab = "Latitudine (°)",
-     ylab = "Temperatura media Gennaio (°F)")
+plot(Lat, JulyTF, xlab = "Latitudine (Â°)",
+     ylab = "Temperatura media Gennaio (Â°F)")
 sm.regression(Lat, JulyTF, method = "cv", add = TRUE)
 
 #JulyTF, Long
-plot(Long, JulyTF, xlab = "Longitudine (°)",
-     ylab = "Temperatura media Gennaio (°F)")
+plot(Long, JulyTF, xlab = "Longitudine (Â°)",
+     ylab = "Temperatura media Gennaio (Â°F)")
 sm.regression(Long, JulyTF, method = "df", add = TRUE)
-plot(Long, JulyTF, xlab = "Longitudine (°)",
-     ylab = "CTemperatura media Gennaio (°F)")
+plot(Long, JulyTF, xlab = "Longitudine (Â°)",
+     ylab = "CTemperatura media Gennaio (Â°F)")
 sm.regression(Long, JulyTF, method = "cv", add = TRUE)
 
 #JulyTF, JanTF
-plot(JanTF, JulyTF, xlab = "Temperatura media Gennaio (°F)",
-     ylab = "Temperatura media Luglio (°F)")
+plot(JanTF, JulyTF, xlab = "Temperatura media Gennaio (Â°F)",
+     ylab = "Temperatura media Luglio (Â°F)")
 sm.regression(JanTF, JulyTF, method = "df", add = TRUE)
-plot(JanTF, JulyTF, xlab = "Temperatura media Gennaio (°F)",
-     ylab = "Temperatura media Luglio (°F)")
+plot(JanTF, JulyTF, xlab = "Temperatura media Gennaio (Â°F)",
+     ylab = "Temperatura media Luglio (Â°F)")
 sm.regression(JanTF, JulyTF, method = "cv", add = TRUE)
 
 #######Inferenza con 1 variabile
@@ -1093,7 +1079,7 @@ library(exactRankTests)
 perm.test(round(JulyTF), paired = FALSE,
             alternative = "two.sided", mu = 75)
 
-#Accettiamo l'ipotesi di base più nettamente rispetto al wilcox
+#Accettiamo l'ipotesi di base piÃ¹ nettamente rispetto al wilcox
 
 #Test di Kolmogorov
 #Janu
@@ -1102,10 +1088,10 @@ par(mfrow=c(1, 1))
 set.seed(123)
 normale<-rnorm(10000, 33.8, 10.15)
 plot(ecdf(JanTF), do.points = F, verticals = T,
-     xlab = "Temperatura media Gennaio (°F)", ylab = "Probabilità",
+     xlab = "Temperatura media Gennaio (Â°F)", ylab = "ProbabilitÃ ",
      main = "Funzione di ripartizione")
 rug(JanTF)
-curve(pnorm(x, mean(JanTF), sd(JanTF)), xlab = "x", ylab = "Probabilità", type = "s", col = "red",add = T, 
+curve(pnorm(x, mean(JanTF), sd(JanTF)), xlab = "x", ylab = "ProbabilitÃ ", type = "s", col = "red",add = T, 
       main = "Theorical distribution function")
 legend(55, 0.3, c("Empirica", "Teorica"), lty = c(1, 1), col = c("black", "red"))
 dev.off()
@@ -1119,10 +1105,10 @@ par(mfrow=c(1, 1))
 set.seed(123)
 normale<-rnorm(10000, 74.4, 4.6)
 plot(ecdf(JulyTF), do.points = F, verticals = T,
-       xlab = "Temperatura media Luglio (°F)", ylab = "Probabilità",
+       xlab = "Temperatura media Luglio (Â°F)", ylab = "ProbabilitÃ ",
        main = "Funzione di ripartizione")
 rug(JulyTF)
-curve(pnorm(x, mean(JulyTF), sd(JulyTF)), xlab = "x", ylab = "Probabilità", type = "s", col = "red",add = T, 
+curve(pnorm(x, mean(JulyTF), sd(JulyTF)), xlab = "x", ylab = "ProbabilitÃ ", type = "s", col = "red",add = T, 
      main = "Theorical distribution function")
 legend(80, 0.3, c("Empirica", "Teorica"), lty = c(1, 1), col = c("black", "red"))
 dev.off()
@@ -1135,10 +1121,10 @@ par(mfrow=c(1, 1))
 set.seed(123)
 normale<-rnorm(10000, 57.75, 5.37)
 plot(ecdf(RelHum), do.points = F, verticals = T,
-     xlab = "Umidità relativa (%)", ylab = "Probabilità",
+     xlab = "UmiditÃ  relativa (%)", ylab = "ProbabilitÃ ",
      main = "Funzione di ripartizione")
 rug(RelHum)
-curve(pnorm(x, mean(RelHum), sd(RelHum)), xlab = "x", ylab = "Probabilità", type = "s", col = "red",add = T, 
+curve(pnorm(x, mean(RelHum), sd(RelHum)), xlab = "x", ylab = "ProbabilitÃ ", type = "s", col = "red",add = T, 
       main = "Theorical distribution function")
 legend(68, 0.3, c("Empirica", "Teorica"), lty = c(1, 1), col = c("black", "red"))
 dev.off()
@@ -1151,10 +1137,10 @@ par(mfrow=c(1, 1))
 set.seed(123)
 normale<-rnorm(10000, 38.5, 11.57)
 plot(ecdf(Rain), do.points = F, verticals = T,
-     xlab = "Quantità di pioggia (l/m2)", ylab = "Probabilità",
+     xlab = "QuantitÃ  di pioggia (l/m2)", ylab = "ProbabilitÃ ",
      main = "Funzione di ripartizione")
 rug(Rain)
-curve(pnorm(x, mean(Rain), sd(Rain)), xlab = "x", ylab = "Probabilità", type = "s", col = "red",add = T, 
+curve(pnorm(x, mean(Rain), sd(Rain)), xlab = "x", ylab = "ProbabilitÃ ", type = "s", col = "red",add = T, 
       main = "Theorical distribution function")
 legend(55, 0.3, c("Empirica", "Teorica"), lty = c(1, 1), col = c("black", "red"))
 dev.off()
@@ -1162,7 +1148,7 @@ dev.off()
 ks.test(Rain, "pnorm", 38.5, 11.57)
 
 
-##########Inferenza con più variabili
+##########Inferenza con piÃ¹ variabili
 
 library(car)
 median(Lat)
@@ -1198,12 +1184,12 @@ par(mfrow=c(1,2))
 hcv(JanTF_Lat_0, hstart = 0.5, hend = 4)
 sm.density(JanTF_Lat_0, hcv(JanTF_Lat_0, hstart = 0.5, hend = 4),
              yht = 0.1, xlim = c(15, 60),
-             xlab = "Temperatura media Gennaio (°F) <40° latitudine")
+             xlab = "Temperatura media Gennaio (Â°F) <40Â° latitudine")
 title(main = "Kernel density estimation ('CV' h = 2.27)")
 hcv(JanTF_Lat_1, hstart = 0.5, hend = 4)
 sm.density(JanTF_Lat_1, hcv(JanTF_Lat_1, hstart = 0.5, hend = 4),
              yht = 0.1, xlim = c(15, 60),
-             xlab = "Temperatura media Gennaio (°F) >40° latitudine")
+             xlab = "Temperatura media Gennaio (Â°F) >40Â° latitudine")
 title(main = "Kernel density estimation ('CV' h = 2.39)")
 
 var.test(JanTF_Lat_0, JanTF_Lat_1, paired = F, alternative = "two.sided")
@@ -1215,13 +1201,13 @@ par(mfrow=c(1,2))
 hsj(JanTF_Long_0)
 sm.density(JanTF_Long_0, hsj(JanTF_Long_0),
            yht = 0.1, xlim = c(15, 60),
-           xlab =  "Gennaio (°F) <-83° longitudine")
-title(main = "Stima densità ('Plugin' h = 5.53)")
+           xlab =  "Gennaio (Â°F) <-83Â° longitudine")
+title(main = "Stima densitÃ  ('Plugin' h = 5.53)")
 hsj(JanTF_Long_1)
 sm.density(JanTF_Long_1, hsj(JanTF_Long_1),
            yht = 0.1, xlim = c(15, 60),
-           xlab = "Gennaio (°F) >-83° longitudine")
-title(main = "Stima densità ('Plugin' h = 2.69)")
+           xlab = "Gennaio (Â°F) >-83Â° longitudine")
+title(main = "Stima densitÃ  ('Plugin' h = 2.69)")
 dev.off()
 
 var.test(JanTF_Long_0, JanTF_Long_1, paired = F, alternative = "two.sided")
@@ -1252,13 +1238,13 @@ par(mfrow=c(1,2))
 hsj(JulyTF_Long_0)
 sm.density(JulyTF_Long_0, hsj(JulyTF_Long_0),
            yht = 0.17, xlim = c(45, 90),
-           xlab = "Luglio (°F) <-83° longitudine")
-title(main = "Stima densità ('Plugin' h = 3.70)")
+           xlab = "Luglio (Â°F) <-83Â° longitudine")
+title(main = "Stima densitÃ  ('Plugin' h = 3.70)")
 hsj(JulyTF_Long_1)
 sm.density(JulyTF_Long_1, hsj(JulyTF_Long_1),
            yht = 0.17, xlim = c(45, 90),
-           xlab = "Luglio (°F) >-83° longitudine")
-title(main = "Stima densità ('Plugin' h = 0.85)")
+           xlab = "Luglio (Â°F) >-83Â° longitudine")
+title(main = "Stima densitÃ  ('Plugin' h = 0.85)")
 dev.off()
 #non va
 
@@ -1288,10 +1274,10 @@ perm.test(round(JulyTF_Long_0), round(JulyTF_Long_1), paired = F,
 
 par(mfrow=c(1,1))
 plot(ecdf(JanTF_Lat_0), do.points = F, verticals = T, xlim = c(15, 60),
-       lty = 1, xlab = "Temperatura media Gennaio (°F)", ylab = "Probabilità",
+       lty = 1, xlab = "Temperatura media Gennaio (Â°F)", ylab = "ProbabilitÃ ",
        main = "Funzione di ripartizione empirica")
 plot(ecdf(JanTF_Lat_1), do.points = F, verticals = T, lty = 3, add = T)
-legend(45, 0.3, c("Latitudine <40°", "Latitudine >40°"), lty = c(1, 3))
+legend(45, 0.3, c("Latitudine <40Â°", "Latitudine >40Â°"), lty = c(1, 3))
 
 ks.test(JanTF_Lat_0, JanTF_Lat_1)
 
@@ -1299,10 +1285,10 @@ ks.test(JanTF_Lat_0, JanTF_Lat_1)
 
 par(mfrow=c(1,1))
 plot(ecdf(JanTF_Long_0), do.points = F, verticals = T, xlim = c(15, 60),
-     lty = 1, xlab = "Temperatura media Gennaio (°F)", ylab = "Probabilità",
+     lty = 1, xlab = "Temperatura media Gennaio (Â°F)", ylab = "ProbabilitÃ ",
      main = "Funzione di ripartizione empirica")
 plot(ecdf(JanTF_Long_1), do.points = F, verticals = T, lty = 3, add = T)
-legend(45, 0.3, c("Longitudine <-83°", "Longitudine >-83°"), lty = c(1, 3))
+legend(45, 0.3, c("Longitudine <-83Â°", "Longitudine >-83Â°"), lty = c(1, 3))
 
 ks.test(JanTF_Long_0, JanTF_Long_1)
 
@@ -1310,10 +1296,10 @@ ks.test(JanTF_Long_0, JanTF_Long_1)
 
 par(mfrow=c(1,1))
 plot(ecdf(JulyTF_Lat_0), do.points = F, verticals = T, xlim = c(60, 90),
-     lty = 1, xlab = "Temperatura media Luglio (°F)", ylab = "Probabilità",
+     lty = 1, xlab = "Temperatura media Luglio (Â°F)", ylab = "ProbabilitÃ ",
      main = "Funzione di ripartizione empirica")
 plot(ecdf(JulyTF_Lat_1), do.points = F, verticals = T, lty = 3, add = T)
-legend(83, 0.3, c("Latitudine <40°", "Latitudine >40°"), lty = c(1, 3))
+legend(83, 0.3, c("Latitudine <40Â°", "Latitudine >40Â°"), lty = c(1, 3))
 
 ks.test(JulyTF_Lat_0, JulyTF_Lat_1)
 
@@ -1321,10 +1307,10 @@ ks.test(JulyTF_Lat_0, JulyTF_Lat_1)
 
 par(mfrow=c(1,1))
 plot(ecdf(JulyTF_Long_0), do.points = F, verticals = T, xlim = c(60, 90),
-     lty = 1, xlab = "Temperatura media Luglio (°F)", ylab = "Probabilità",
+     lty = 1, xlab = "Temperatura media Luglio (Â°F)", ylab = "ProbabilitÃ ",
      main = "Funzione di ripartizione empirica")
 plot(ecdf(JulyTF_Long_1), do.points = F, verticals = T, lty = 3, add = T)
-legend(83, 0.3, c("Longitudine <-83°", "Longitudine >-83°"), lty = c(1, 3))
+legend(83, 0.3, c("Longitudine <-83Â°", "Longitudine >-83Â°"), lty = c(1, 3))
 
 ks.test(JulyTF_Long_0, JulyTF_Long_1)
 
@@ -1338,24 +1324,24 @@ Jan_State_4 <- split(JanTF, State)[[4]]
 
 
 boxplot(JanTF ~ State, boxwex = 0.2, xlab = "Stati", names = c("Medio-Occidente", "Nord-Est", "Sud", "Ovest"),
-        ylab = "Temperatura media Gennaio (°F)",
+        ylab = "Temperatura media Gennaio (Â°F)",
         main = "Box-and-whiskers plot")
 
 table(State)
 library(sm)
 par(mfrow = c(2, 2))
 sm.density(Jan_State_1, hnorm(Jan_State_1), yht = 0.1, xlim = c(15, 65),
-             xlab = "Medio-Occidente", ylab = "Probabilità")
-title(main = "Stima della densità Kernel")
+             xlab = "Medio-Occidente", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel")
 sm.density(Jan_State_2, hnorm(Jan_State_2), yht = 0.1, xlim = c(15, 65),
-             xlab = "Nord-Est", ylab = "Probabilità")
-title(main = "Stima della densità Kernel")
+             xlab = "Nord-Est", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel")
 sm.density(Jan_State_3, hnorm(Jan_State_3), yht = 0.1, xlim = c(15, 65),
-             xlab = "Sud", ylab = "Probabilità")
-title(main = "Stima della densità Kernel")
+             xlab = "Sud", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel")
 sm.density(Jan_State_4, hnorm(Jan_State_4), yht = 0.1, xlim = c(15, 65),
-             xlab = "Ovest", ylab = "Probabilità")
-title(main = "Stima della densità Kernel")
+             xlab = "Ovest", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel")
 par(mfrow=c(1, 1))
 
 summary(aov(JanTF ~ State))
@@ -1372,7 +1358,7 @@ July_State_4 <- split(JulyTF, State)[[4]]
 
 par(mfrow = c(1, 1))
 boxplot(JulyTF ~ State, boxwex = 0.2, xlab = "Stati", names = c("Medio-Occidente", "Nord-Est", "Sud", "Ovest"),
-        ylab = "Temperatura media Luglio (°F)",
+        ylab = "Temperatura media Luglio (Â°F)",
         main = "Box-and-whiskers plot conzionato a Stati")
 
 
@@ -1380,17 +1366,17 @@ boxplot(JulyTF ~ State, boxwex = 0.2, xlab = "Stati", names = c("Medio-Occidente
 library(sm)
 par(mfrow = c(2, 2))
 sm.density(July_State_1, hnorm(July_State_1), yht = 0.18, xlim = c(55, 90),
-           xlab = "Medio-Occidente", ylab = "Probabilità")
-title(main = "Stima della densità Kernel")
+           xlab = "Medio-Occidente", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel")
 sm.density(July_State_2, hnorm(July_State_2), yht = 0.18, xlim = c(55, 90),
-           xlab = "Nord-Est", ylab = "Probabilità")
-title(main = "Stima della densità Kernel")
+           xlab = "Nord-Est", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel")
 sm.density(July_State_3, hnorm(July_State_3), yht = 0.18, xlim = c(55, 90),
-           xlab = "Sud", ylab = "Probabilità")
-title(main = "Stima della densità Kernel")
+           xlab = "Sud", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel")
 sm.density(July_State_4, hnorm(July_State_4), yht = 0.18, xlim = c(55, 90),
-           xlab = "Ovest", ylab = "Probabilità")
-title(main = "Stima della densità Kernel")
+           xlab = "Ovest", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel")
 
 summary(aov(JulyTF ~ State))
 TukeyHSD(aov(JulyTF ~ State), "State")
@@ -1405,24 +1391,24 @@ par(mfrow = c(1, 1))
 
 
 boxplot(RelHum ~ State, boxwex = 0.2, xlab = "Stati", names = c("Medio-Occidente", "Nord-Est", "Sud", "Ovest"),
-        ylab = "Umidità relativa (%)",
+        ylab = "UmiditÃ  relativa (%)",
         main = "Box-and-whiskers plot conzionato a Stati")
 
 
 library(sm)
 par(mfrow = c(2, 2))
 sm.density(Rel_State_1, hnorm(Rel_State_1), yht = 0.18, xlim = c(35, 80),
-           xlab = "Medio-Occidente", ylab = "Probabilità")
-title(main = "Stima della densità Kernel")
+           xlab = "Medio-Occidente", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel")
 sm.density(Rel_State_2, hnorm(Rel_State_2), yht = 0.18, xlim = c(35, 80),
-           xlab = "Nord-Est", ylab = "Probabilità")
-title(main = "Stima della densità Kernel")
+           xlab = "Nord-Est", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel")
 sm.density(Rel_State_3, hnorm(Rel_State_3), yht = 0.18, xlim = c(35, 80),
-           xlab = "Sud", ylab = "Probabilità")
-title(main = "Stima della densità Kernel")
+           xlab = "Sud", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel")
 sm.density(Rel_State_4, hnorm(Rel_State_4), yht = 0.18, xlim = c(35, 80),
-           xlab = "Ovest", ylab = "Probabilità")
-title(main = "Stima della densità Kernel")
+           xlab = "Ovest", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel")
 
 summary(aov(RelHum ~ State))
 TukeyHSD(aov(RelHum ~ State), "State")
@@ -1437,7 +1423,7 @@ par(mfrow = c(1, 1))
 
 png("box_rain_cond.png")
 boxplot(Rain ~ State, boxwex = 0.2, xlab = "Stati", names = c("Medio-Occidente", "Nord-Est", "Sud", "Ovest"),
-        ylab = "Quantità di pioggi (l/m2)",
+        ylab = "QuantitÃ  di pioggi (l/m2)",
         main = "Box-and-whiskers plot conzionato a Stati")
 dev.off()
 
@@ -1446,17 +1432,17 @@ dev.off()
 library(sm)
 par(mfrow = c(2, 2))
 sm.density(Rain_State_1, hnorm(Rain_State_1), yht = 0.18, xlim = c(10, 70),
-           xlab = "Medio-Occidente", ylab = "Probabilità")
-title(main = "Stima della densità Kernel")
+           xlab = "Medio-Occidente", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel")
 sm.density(Rain_State_2, hnorm(Rain_State_2), yht = 0.18, xlim = c(10, 70),
-           xlab = "Nord-Est", ylab = "Probabilità")
-title(main = "Stima della densità Kernel")
+           xlab = "Nord-Est", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel")
 sm.density(Rain_State_3, hnorm(Rain_State_3), yht = 0.18, xlim = c(10, 70),
-           xlab = "Sud", ylab = "Probabilità")
-title(main = "Stima della densità Kernel")
+           xlab = "Sud", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel")
 sm.density(Rain_State_4, hnorm(Rain_State_4), yht = 0.18, xlim = c(10, 70),
-           xlab = "Ovest", ylab = "Probabilità")
-title(main = "Stima della densità Kernel")
+           xlab = "Ovest", ylab = "ProbabilitÃ ")
+title(main = "Stima della densitÃ  Kernel")
 
 summary(aov(Rain ~ State))
 TukeyHSD(aov(Rain ~ State), "State")
@@ -1489,7 +1475,7 @@ cor(Data[, 2:7])
 par(mfrow = c(1, 1))
 Reg<-lm(JanTF ~ Lat)
 png("reg_jan_lat.png")
-plot(Lat, JanTF, xlab = "Latitudine (°)", ylab = "Temperatura media Gennaio (°F)", main = "Scatter plot")
+plot(Lat, JanTF, xlab = "Latitudine (Â°)", ylab = "Temperatura media Gennaio (Â°F)", main = "Scatter plot")
 abline(Reg)
 summary(Reg)
 dev.off()
@@ -1502,22 +1488,22 @@ dev.off()
 
 par(mfrow = c(1, 1))
 png("reg_lat_jan_ano.png")
-plot(Lat, JanTF, xlab = "Latitudine (°)", ylab = "Temperatura media Gennaio (°F)", main = "Scatter plot")
+plot(Lat, JanTF, xlab = "Latitudine (Â°)", ylab = "Temperatura media Gennaio (Â°F)", main = "Scatter plot")
 abline(lm(JanTF ~ Lat))
 text(x = Lat[49] + 0.2, y = JanTF[49], labels = "49", adj=0)
 dev.off()
 
 library(sm)
 png("local_jan_lat.png")
-plot(Lat, JanTF, xlab = "Latitudine (°)", 
-     ylab = "Temperatura media Gennaio (°F)", main = "Regressione lineare locale")
+plot(Lat, JanTF, xlab = "Latitudine (Â°)", 
+     ylab = "Temperatura media Gennaio (Â°F)", main = "Regressione lineare locale")
 sm.regression(Lat, JanTF, method = "df", add = T)
 dev.off()
 
-#togliendo l'intercetta(però significativa)
+#togliendo l'intercetta(perÃ² significativa)
 summary(lm(JanTF ~ -1 + Lat))
 
-#togliendo l'intercettala bontà sale da 0.73 a 0.86
+#togliendo l'intercettala bontÃ  sale da 0.73 a 0.86
 
 #togliendo valori anomali
 
@@ -1541,16 +1527,16 @@ dev.off()
 
 par(mfrow = c(1, 1))
 png("reg_jan_long.png")
-plot(Long, JanTF, xlab = "Longitudine (°)",
-     ylab = "Temperatura media Gennaio (°F)", main = "Scatter plot")
+plot(Long, JanTF, xlab = "Longitudine (Â°)",
+     ylab = "Temperatura media Gennaio (Â°F)", main = "Scatter plot")
 abline(lm(JanTF ~ Long))
 dev.off()
 text(x = Long[31] + 0.3, y = JanTF[31], labels = "31", adj=0)
 dev.off()
 
 png("local_reg2.png")
-plot(Long, JanTF, xlab = "Longitudine (°)",
-     ylab = "Temperatura media Gennaio (°F)", main = "Scatter plot")
+plot(Long, JanTF, xlab = "Longitudine (Â°)",
+     ylab = "Temperatura media Gennaio (Â°F)", main = "Scatter plot")
 sm.regression(Long, JanTF, method = "df", add = T)
 dev.off()
 
@@ -1576,16 +1562,16 @@ par(mfrow = c(2, 2))
 plot(lm(JulyTF ~ Lat), which = c(1:4), add.smooth = F)
 
 par(mfrow = c(1, 1))
-plot(Lat, JulyTF, xlab = "Latitudine (°)",
-     ylab = "Temperatura media Luglio (°F)", main = "Scatter plot")
+plot(Lat, JulyTF, xlab = "Latitudine (Â°)",
+     ylab = "Temperatura media Luglio (Â°F)", main = "Scatter plot")
 abline(lm(JulyTF ~ Lat))
 text(x = Lat[46] + 0.3, y = JulyTF[46], labels = "46", adj=0)
 text(x = Lat[47] + 0.3, y = JulyTF[47], labels = "47", adj=0)
 
 
 library(sm)
-plot(Lat, JulyTF, xlab = "Latitudine (°)",
-     ylab = "Temperatura media Luglio (°F)", main = "Regressione lineare locale")
+plot(Lat, JulyTF, xlab = "Latitudine (Â°)",
+     ylab = "Temperatura media Luglio (Â°F)", main = "Regressione lineare locale")
 sm.regression(Lat, JulyTF, method = "df", add = T)
 
 #togliendo valori anomali
